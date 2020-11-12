@@ -1,0 +1,112 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+    
+    background: linear-gradient(135deg,#0ef8d1,#36daf7);
+}
+
+main {
+	display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+
+header { 
+    height: 150px;
+    margin-top: 50px;
+    text-align: center;
+    color: #33030c;
+    font-weight: bold;
+}
+ 
+.form-container{
+    height: 150px;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5px;
+   }
+   h3 {
+   
+    font-size: 22px;
+}
+input[type=search] {
+    
+ 	width: 400px;
+	height: 50px;
+	box-sizing: border-box;
+	border: 3px solid #b71c1c;
+	border-radius: 4px;
+	font-size: 20px;
+	background-color: white;
+}
+input[type=submit] {
+    
+	height: 50px;
+	border: 1px solid#b71c1c;
+	border-radius: 12px;
+	color: white;
+	font-size: 20px;
+	background-color: #b71c1c;
+	padding: 12px;
+}
+
+.searchMain{
+    display: grid;
+grid-template-columns: 1fr 1fr 1fr ;
+grid-template-rows: 3fr 1fr;
+gap: 5px;
+}
+.beerList>ul{
+    grid-column: 1;
+grid-row: 1;
+list-style: none;
+font-size: 20px;
+font-weight: 500;
+margin-bottom: 15px;
+margin-top: -40px;
+}
+
+.pages {
+    grid-row: 2;
+    display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+
+#prev{
+    grid-column: 1;
+
+}
+#current-span{
+    grid-column: 2;
+    font-size: 20px;
+}
+#next{
+    grid-column: 3;
+}
+.pages button{
+    height: 30px;
+width: 80px;
+ border: 1px solid #b71c1c;
+border-radius: 12px;
+color: white;
+font-size: 20px;
+background-color:#b71c1c;
+}
+.navLandingPage{
+    display:block;
+     margin: 30px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    background-color: #b71c1c;
+    font-size: 22px;
+    
+}
