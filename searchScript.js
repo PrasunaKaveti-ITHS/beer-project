@@ -49,7 +49,7 @@ function render(data) {
 //calls when a list item is clicked
 function onUlClicked(evt) {
   const id = evt.target.getAttribute("name");
-  const url = `Beerdetails.html?name=${id}`;
+  const url = `BeerDetails.html?name=${id}`;
   document.location.href = url;
 }
 
