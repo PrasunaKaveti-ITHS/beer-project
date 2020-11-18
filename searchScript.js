@@ -1,4 +1,4 @@
-const api = "https://api.punkapi.com/v2/beers?page=";
+const api = "https://api.punkapi.com/v2/beers";
 const formElement = document.querySelector("form");
 const listElement = document.querySelector("article.beerList");
 const previous = document.querySelector("#prev");
@@ -10,17 +10,15 @@ pageCount.innerHTML = "";
 formElement.addEventListener("submit", onSubmit);
 let currentPage = 1;
 let url;
-let urlCount;
 let searchString;
 
 function onSubmit(evt) {
-  
-    urlCount = "&per_page=10";
-    url = api + currentPage + urlCount;
-    getData(url, render);
-    evt.preventDefault();
-}
 
+  searchStr = evt.target[0].value;
+  url = `${api}?beer_name=${searchStr}&page=${currentPage}&per_page=10`;
+  getData(url, render);
+  evt.preventDefault();
+}
 function getData(url, callback) {
   fetch(url)
     .then((res) => res.json())
@@ -56,7 +54,7 @@ function onUlClicked(evt) {
 //calls when Previous Page button is clicked
 previous.onclick = function (evt) {
   if (currentPage !== 1) {
-    url = api + (currentPage - 1) + urlCount;
+    url = `${api}?beer_name=${searchStr}&page=${currentPage - 1}&per_page=10`;
     getData(url, render);
     evt.preventDefault();
     currentPage--;
@@ -68,7 +66,7 @@ previous.onclick = function (evt) {
 
 next.onclick = function (evt) {
   if (ulElement.childElementCount == 10) {
-    url = api + (currentPage + 1) + urlCount;
+    url = `${api}?beer_name=${searchStr}&page=${currentPage + 1}&per_page=10`;
     getData(url, render);
     evt.preventDefault();
     currentPage++;
